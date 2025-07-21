@@ -44,16 +44,41 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.menu, color: Colors.white, size: 32),
+                    // Menu Button
+                    IconButton(
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        // TODO: Add menu action here
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Menu button clicked!')),
+                        );
+                      },
+                    ),
+                    // Notification Button
                     Stack(
                       children: [
-                        Icon(
-                          Icons.notifications_none,
-                          color: Colors.white,
-                          size: 32,
+                        IconButton(
+                          icon: const Icon(
+                            Icons.notifications_none,
+                            color: Colors.white,
+                            size: 32,
+                          ),
+                          onPressed: () {
+                            // TODO: Add notification action here
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Notification button clicked!'),
+                              ),
+                            );
+                          },
                         ),
                         Positioned(
-                          right: 0,
+                          right: 6,
+                          top: 6,
                           child: Container(
                             width: 18,
                             height: 18,
